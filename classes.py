@@ -163,6 +163,18 @@ class Sapata_isolada():
         h_util = self.H - self.centroide
         return [self.H, self.h, h_util]
 
+    def comprimento_flexao(self):
+        x = (2 * self.A - self.base_pilar) / 4
+        y = (2 * self.B - self.altura_pilar) / 4
+        return [x, y]
+
+    def momentos_fletores(self):
+        mx = round((self.tensao_dimensionamento() * self.comprimento_flexao()[0] ** 2) / 2, 2)
+        my = round((self.tensao_dimensionamento() * self.comprimento_flexao()[1] ** 2) / 2, 2)
+        return [mx, my]
+
+
+
 sapata = Sapata_isolada()
 sapata.carga_compressao = 250
 sapata.mk = 20
