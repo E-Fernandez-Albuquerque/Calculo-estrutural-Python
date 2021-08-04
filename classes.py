@@ -173,6 +173,27 @@ class Sapata_isolada():
         my = round((self.tensao_dimensionamento() * self.comprimento_flexao()[1] ** 2) / 2, 2)
         return [mx, my]
 
+    def area_aco(self):
+        Asx = round(1.4 * self.momentos_fletores()[0] / ((self.aco / 11.5) * 0.87 * self.comprimento_flexao()[0]) * \
+                    self.B, 2)
+        Asy = round(1.4 * self.momentos_fletores()[1] / ((self.aco / 11.5) * 0.87 * self.comprimento_flexao()[1]) * \
+                    self.A, 2)
+        return [Asx, Asy]
+
+    def armaduras(self, bitolax, bitolay):
+        nbarx, nbary = 0, 0
+        nx = 400 * self.area_aco()[0] / (pi * bitolax ** 2)
+        if nx > round(nx):
+            nbarx = round(nx+1, 0)
+        else:
+            nbarx = round(nx, 0)
+        ny = 400 * self.area_aco()[1] / (pi * bitolay ** 2)
+        if ny > round(ny):
+            nbary = round(ny+1, 0)
+        else:
+            nbary = round(ny, 0)
+        return [nbarx, nbary]
+
 
 
 sapata = Sapata_isolada()
@@ -189,3 +210,5 @@ print(sapata.balanco())
 print(sapata.tensoes())
 print(f'A: {round(sapata.A, 2)}, B: {round(sapata.B, 2)}')
 print(sapata.alturas())
+print(sapata.area_aco())
+print(sapata.armaduras(20, 16))
