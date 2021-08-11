@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Inicial</class>
+ <widget class="QMainWindow" name="Inicial">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>562</width>
+    <height>296</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="comboBox_lajes">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Lajes</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Laje Maciça</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Laje Nervurada Unidirecional (Pré-moldada)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Laje Nervurada Bidirecional (Cabacinha)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Verificação - Laje Maciça</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Verificação - Laje Nervurada Unidirecional</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Verificação - Laje Nervurada Bidirecional</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_vigas">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Vigas</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Vigas - Flexão</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Vigas - Cisalhamento</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Verificação - Vigas (Flexão)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Verificação - Vigas (Cisalhamento)</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_sapatas">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Sapatas</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Sapatas isoladas</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_pilares">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>240</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Pilares</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Pilar de canto</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pilar de extremidade</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pilar intermediário</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton_lajes">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>90</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calcular</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_vigas">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>140</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calcular</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sapatas">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>190</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calcular</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_pilares">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>240</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calcular</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>10</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Escolha a estrutura</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>40</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Selecione a opção desejada e aperte o respectivo botão para calcular</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

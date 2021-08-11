@@ -1,6 +1,28 @@
 from math import pi
 
-class Viga():
+class Viga_cisalhamento():
+    def __init__(self):
+        self.base = 0
+        self.altura = 0
+        self.vk = 0
+        self.fck = 0
+        self.aco = 50
+        self.centroide = 5
+
+    def twu(self):
+        return 0.27 * (1 - self.fck/250) * (10 * self.fck / 1.4)
+
+    def twd(self):
+        return 1.4 * self.vk / (self.base * (self.altura - self.centroide))
+
+    def asw(self):
+        return (self.base * (100 * self.twd() - 9 * 30**(2/3))) / 392
+
+    def espacamento(self, estribo):
+        return (pi * estribo**2) / (2 * self.asw())
+
+
+class Viga_flexao():
     def __init__(self):
         self.base = 0
         self.altura = 0
@@ -37,7 +59,7 @@ class Viga():
             return round(barras, 0)
 
 
-class Laje():
+class Laje_macica_flexao():
     def __init__(self):
         self.espessura = 0
         self.base = 100
@@ -87,7 +109,7 @@ class Laje():
         return [ex, ey, exe, eye]
 
 
-class Sapata_isolada():
+class Sapata_isolada_flexao():
     def __init__(self):
         self.tensao_solo = 0
         self.carga_compressao = 0
@@ -193,22 +215,3 @@ class Sapata_isolada():
         else:
             nbary = round(ny, 0)
         return [nbarx, nbary]
-
-
-
-sapata = Sapata_isolada()
-sapata.carga_compressao = 250
-sapata.mk = 20
-sapata.tensao_solo = 27
-sapata.base_pilar = 0.6
-sapata.altura_pilar = 0.3
-
-
-print(sapata.dimensao_inicial())
-print(sapata.dimensao_final())
-print(sapata.balanco())
-print(sapata.tensoes())
-print(f'A: {round(sapata.A, 2)}, B: {round(sapata.B, 2)}')
-print(sapata.alturas())
-print(sapata.area_aco())
-print(sapata.armaduras(20, 16))
