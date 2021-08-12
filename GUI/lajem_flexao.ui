@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>VigasCisalhamento</class>
- <widget class="QMainWindow" name="VigasCisalhamento">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,7 +29,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Vigas</string>
+     <string>Lajes Maciças</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -50,7 +50,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Cálculos estruturais para vigas submetidas a esforços Cortantes</string>
+     <string>Cálculos estruturais para lajes submetidas a esforços Fletores</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -97,9 +97,9 @@
    <widget class="QLabel" name="label_altura">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>150</y>
-      <width>41</width>
+      <x>200</x>
+      <y>110</y>
+      <width>61</width>
       <height>20</height>
      </rect>
     </property>
@@ -109,7 +109,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Altura</string>
+     <string>Espessura</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -118,10 +118,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>120</y>
-      <width>81</width>
-      <height>121</height>
+      <x>20</x>
+      <y>130</y>
+      <width>171</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -138,8 +138,8 @@ border: 1px solid  black;</string>
    <widget class="QLabel" name="label_unidade1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>170</y>
+      <x>240</x>
+      <y>130</y>
       <width>41</width>
       <height>20</height>
      </rect>
@@ -159,8 +159,8 @@ border: 1px solid  black;</string>
    <widget class="QLabel" name="label_base">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>240</y>
+      <x>60</x>
+      <y>150</y>
       <width>41</width>
       <height>20</height>
      </rect>
@@ -171,7 +171,7 @@ border: 1px solid  black;</string>
      </font>
     </property>
     <property name="text">
-     <string>Base</string>
+     <string>Base:</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -180,8 +180,8 @@ border: 1px solid  black;</string>
    <widget class="QLabel" name="label_unidade2">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>260</y>
+      <x>100</x>
+      <y>150</y>
       <width>41</width>
       <height>20</height>
      </rect>
@@ -192,28 +192,7 @@ border: 1px solid  black;</string>
      </font>
     </property>
     <property name="text">
-     <string>cm</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_vk">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>130</y>
-      <width>91</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>8</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Esforço cortante:</string>
+     <string>100 cm</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -223,7 +202,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>130</y>
+      <y>170</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -234,7 +213,7 @@ border: 1px solid  black;</string>
      </font>
     </property>
     <property name="text">
-     <string>tf</string>
+     <string>kgf.m</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -243,7 +222,7 @@ border: 1px solid  black;</string>
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>263</x>
+      <x>280</x>
       <y>120</y>
       <width>16</width>
       <height>231</height>
@@ -257,7 +236,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>310</y>
+      <y>210</y>
       <width>61</width>
       <height>20</height>
      </rect>
@@ -278,7 +257,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>310</y>
+      <y>210</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -299,7 +278,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>310</y>
+      <y>210</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -318,7 +297,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>280</y>
+      <y>180</y>
       <width>191</width>
       <height>20</height>
      </rect>
@@ -330,8 +309,8 @@ border: 1px solid  black;</string>
    <widget class="QLabel" name="label_fck">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>190</y>
+      <x>50</x>
+      <y>270</y>
       <width>81</width>
       <height>20</height>
      </rect>
@@ -351,8 +330,8 @@ border: 1px solid  black;</string>
    <widget class="QLabel" name="label_aco">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>160</y>
+      <x>50</x>
+      <y>240</y>
       <width>81</width>
       <height>20</height>
      </rect>
@@ -374,7 +353,7 @@ border: 1px solid  black;</string>
      <rect>
       <x>310</x>
       <y>310</y>
-      <width>201</width>
+      <width>211</width>
       <height>41</height>
      </rect>
     </property>
@@ -388,11 +367,11 @@ border: 1px solid  black;</string>
      <string>Calcular</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="comboBox_fck">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>190</y>
+      <x>140</x>
+      <y>270</y>
       <width>81</width>
       <height>22</height>
      </rect>
@@ -449,30 +428,11 @@ border: 1px solid  black;</string>
      <string>Voltar</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>250</y>
-      <width>151</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Calcular área mínima de aço</string>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="doubleSpinBox_vk">
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_mx">
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>130</y>
+      <y>170</y>
       <width>81</width>
       <height>22</height>
      </rect>
@@ -480,12 +440,15 @@ border: 1px solid  black;</string>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+    <property name="maximum">
+     <double>5000.000000000000000</double>
+    </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="comboBox_aco">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>160</y>
+      <x>140</x>
+      <y>240</y>
       <width>81</width>
       <height>22</height>
      </rect>
@@ -510,31 +473,236 @@ border: 1px solid  black;</string>
      </property>
     </item>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
+   <widget class="QSpinBox" name="spinBox_e">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>260</y>
+      <x>210</x>
+      <y>130</y>
       <width>42</width>
       <height>22</height>
      </rect>
     </property>
+    <property name="minimum">
+     <number>5</number>
+    </property>
+    <property name="maximum">
+     <number>30</number>
+    </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox_2">
+   <widget class="QLabel" name="label_subtitulo_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>300</x>
+      <y>110</y>
+      <width>241</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Esforços de flexão</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_mx">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
       <y>170</y>
-      <width>42</width>
+      <width>41</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mx:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_descricao_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>130</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>7</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Selecione quais esforços serão calculados. Para valores negativos, considerar o módulo.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_my">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>200</y>
+      <width>81</width>
       <height>22</height>
      </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="maximum">
+     <double>5000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_unidade3_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>200</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>kgf.m</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_my">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>200</y>
+      <width>41</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>My:</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_mxe">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>240</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="maximum">
+     <double>5000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_unidade3_3">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>240</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>kgf.m</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_unidade3_4">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>270</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>kgf.m</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_mye">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>270</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="maximum">
+     <double>5000.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_mye">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>270</y>
+      <width>41</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mye:</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_mxe">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>240</y>
+      <width>41</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Mxe:</string>
     </property>
    </widget>
   </widget>
  </widget>
  <tabstops>
   <tabstop>lineEdit_centroide</tabstop>
-  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_fck</tabstop>
   <tabstop>pushButton_calcular</tabstop>
  </tabstops>
  <resources/>

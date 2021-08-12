@@ -388,7 +388,7 @@ border: 1px solid  black;</string>
      <string>Calcular</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="comboBox_fck">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -449,7 +449,7 @@ border: 1px solid  black;</string>
      <string>Voltar</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QRadioButton" name="radioButton_min">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -481,7 +481,7 @@ border: 1px solid  black;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="comboBox_aco">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -510,7 +510,7 @@ border: 1px solid  black;</string>
      </property>
     </item>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
+   <widget class="QSpinBox" name="spinBox_base">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -520,7 +520,7 @@ border: 1px solid  black;</string>
      </rect>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox_2">
+   <widget class="QSpinBox" name="spinBox_altura">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -534,7 +534,7 @@ border: 1px solid  black;</string>
  </widget>
  <tabstops>
   <tabstop>lineEdit_centroide</tabstop>
-  <tabstop>comboBox</tabstop>
+  <tabstop>comboBox_fck</tabstop>
   <tabstop>pushButton_calcular</tabstop>
  </tabstops>
  <resources/>
