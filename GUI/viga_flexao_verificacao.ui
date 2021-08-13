@@ -1812,7 +1812,7 @@ border: 1px solid  black;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -1831,7 +1831,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -1852,7 +1852,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -1871,7 +1871,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -1891,7 +1891,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -1910,7 +1910,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -1931,7 +1931,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -1950,7 +1950,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -1971,7 +1971,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -1990,7 +1990,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2012,7 +2012,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2031,7 +2031,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2052,7 +2052,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2071,7 +2071,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2091,7 +2091,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2110,7 +2110,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2131,7 +2131,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2150,7 +2150,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2171,7 +2171,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2190,7 +2190,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2212,7 +2212,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2231,7 +2231,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2252,7 +2252,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2271,7 +2271,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2292,7 +2292,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2311,7 +2311,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2332,7 +2332,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2351,7 +2351,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2371,7 +2371,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2390,7 +2390,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2411,7 +2411,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2430,7 +2430,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2451,7 +2451,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">
@@ -2470,7 +2470,7 @@ border: none</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/newPrefix/circle.png);
+        <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
        </property>
        <property name="frameShape">
@@ -2492,7 +2492,7 @@ border: none</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/newPrefix/circle.png);
+      <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
      </property>
      <property name="frameShape">
@@ -2511,7 +2511,7 @@ border: none</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">image: url(:/newPrefix/circle.png);
+       <string notr="true">image: url(../imgs/circle.png);
 border: none</string>
       </property>
       <property name="frameShape">

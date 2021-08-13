@@ -30,6 +30,7 @@ class Viga_flexao():
         self.fck = 0
         self.aco = 50
         self.centroide = 5
+        self.cobrimento = 3
 
     def sigmacd(self):
         return 0.85 * self.fck / 140
@@ -53,11 +54,41 @@ class Viga_flexao():
 
     def barras_aco(self, bitola):
         barras = 400 * self.area_aco() / (pi * bitola ** 2)
-        if barras > round(barras):
-            return round(barras+1, 0)
+        if round(barras) > barras:
+            barras = round(barras, 0)
         else:
-            return round(barras, 0)
+            barras = round(barras + 1, 0)
+        return barras
 
+    def camadas_armadura(self, bitola, diametro_brita, diametro_estribo):
+        nbar = self.barras_aco(bitola)
+        nbar_1cam = nbar
+        e_hor = (self.base - 2 * (self.cobrimento + diametro_estribo/10) - nbar_1cam * bitola/10) / (nbar_1cam - 1)
+        while e_hor <= diametro_brita:
+            nbar_1cam -= 1
+            e_hor = (self.base - 2 * (self.cobrimento + diametro_estribo/10) - nbar_1cam * bitola / 10) / (nbar_1cam - 1)
+        if round(nbar / nbar_1cam) < nbar / nbar_1cam:
+            ncam = round(nbar / nbar_1cam) + 1
+        else:
+            ncam = round(nbar / nbar_1cam)
+
+        return [nbar_1cam, e_hor, ncam]
+
+    # def calcular_centroide(self, bitola, diametro_brita, diametro_estribo):
+    #     camadas = self.camadas_armadura(bitola, diametro_brita, diametro_estribo)[2]
+    #     centroide = 0
+    #     if camadas == 1:
+    #         centroide = self.cobrimento + diametro_estribo/10 + bitola/20
+    #     elif camadas == 2:
+    #         n1 = self.camadas_armadura(20, 3, 5)[0] * (self.cobrimento + diametro_estribo/10 + bitola/10 + 2 +
+    #                                                    bitola/20) * bitola/10
+    #         n2 = (self.barras_aco(20) - self.camadas_armadura(20, 3, 5)[0]) * (n1 + bitola/20 + 2 + bitola/20) * \
+    #              bitola/10
+    #
+    #         d = self.barras_aco(20) * bitola/10
+    #         print(n1, n2, d)
+    #         centroide = (n1 + n2) / d
+    #     return centroide
 
 class Laje_macica_flexao():
     def __init__(self):
@@ -215,3 +246,14 @@ class Sapata_isolada_flexao():
         else:
             nbary = round(ny, 0)
         return [nbarx, nbary]
+
+viga = Viga_flexao()
+viga.base = 18
+viga.altura = 65
+viga.mk = 14
+viga.fck = 30
+viga.aco = 50
+#cobrimento 3, estribo 5
+print(viga.barras_aco(20))
+print(viga.camadas_armadura(20, 3, 5))
+print(viga.calcular_centroide(20, 3, 5))

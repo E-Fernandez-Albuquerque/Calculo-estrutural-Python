@@ -257,7 +257,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>310</y>
+      <y>300</y>
       <width>61</width>
       <height>20</height>
      </rect>
@@ -278,7 +278,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>310</y>
+      <y>300</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -299,7 +299,7 @@ border: 1px solid  black;</string>
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>310</y>
+      <y>300</y>
       <width>31</width>
       <height>20</height>
      </rect>
@@ -511,12 +511,78 @@ border: 1px solid  black;</string>
      </rect>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEdit_centroide_2">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>330</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>2</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_unidade4_2">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>330</y>
+      <width>31</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>cm</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_cobrimento">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>330</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Cobrimento:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <tabstops>
+  <tabstop>spinBox_altura</tabstop>
+  <tabstop>spinBox_base</tabstop>
   <tabstop>lineEdit_centroide</tabstop>
+  <tabstop>doubleSpinBox_mk</tabstop>
+  <tabstop>comboBox_aco</tabstop>
   <tabstop>comboBox_fck</tabstop>
   <tabstop>pushButton_calcular</tabstop>
+  <tabstop>pushButton_voltar</tabstop>
  </tabstops>
  <resources/>
  <connections/>
