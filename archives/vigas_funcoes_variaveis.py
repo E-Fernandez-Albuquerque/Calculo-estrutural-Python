@@ -17,7 +17,7 @@ def opcao_viga(tela0, tela1, tela2, tela3, tela4):
 
 #FUNCOES
 def calcular(data_container):
-    viga = Viga_flexao()
+    viga = VigaFlexao()
     viga.base = data_container.spinBox_base.value()
     viga.altura = data_container.spinBox_altura.value()
     viga.mk = data_container.doubleSpinBox_mk.value()

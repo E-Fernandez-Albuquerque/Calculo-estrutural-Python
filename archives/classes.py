@@ -1,6 +1,7 @@
-from math import pi
+from math import pi, sqrt
 
-class Viga_cisalhamento():
+
+class VigaCisalhamento():
     def __init__(self):
         self.base = 0
         self.altura = 0
@@ -21,8 +22,11 @@ class Viga_cisalhamento():
     def espacamento(self, estribo):
         return (pi * estribo**2) / (2 * self.asw())
 
+    def verificar(self, estribo):
+        pass
 
-class Viga_flexao():
+
+class VigaFlexao():
     def __init__(self):
         self.base = 0
         self.altura = 0
@@ -31,66 +35,160 @@ class Viga_flexao():
         self.aco = 50
         self.centroide = 5
         self.cobrimento = 3
+        self.altura_util = 0
+
+    def calcular_altura_util(self):
+        self.altura_util = self.altura - self.centroide
 
     def sigmacd(self):
-        return 0.85 * self.fck / 140
+        return round(0.85 * self.fck / 140, 4)
 
     def fyd(self):
-        return self.aco / 11.5
+        return round(self.aco / 11.5, 3)
 
     def mi(self):
-        altura_util = self.altura - self.centroide
-        return (140 * self.mk) / (self.sigmacd() * (altura_util ** 2) * self.base)
+        self.calcular_altura_util()
+        return round((140 * self.mk) / (self.sigmacd() * (self.altura_util ** 2) * self.base), 4)
 
     def omega(self):
-        return 1 - (1 - 2 * self.mi()) ** (1/2)
+        return round(1 - sqrt((1 - 2 * self.mi())), 3)
 
     def ks(self):
-        altura_util = self.altura - self.centroide
-        return (self.sigmacd() / self.fyd()) * self.base * altura_util
+        return round((self.sigmacd() / self.fyd()) * self.base * self.altura_util, 2)
 
     def area_aco(self):
         return self.ks() * self.omega()
 
-    def barras_aco(self, bitola):
-        barras = 400 * self.area_aco() / (pi * bitola ** 2)
-        if round(barras) > barras:
-            barras = round(barras, 0)
+    def barras_aco(self, bitola_t, bitola_c=10):
+        if self.mi() < 0.3:
+            barras = 400 * self.area_aco() / (pi * bitola_t ** 2)
+            if round(barras) > barras:
+                nbar = round(barras, 0)
+            else:
+                nbar = round(barras + 1, 0)
+            return nbar
         else:
-            barras = round(barras + 1, 0)
-        return barras
+            barrasT = 400 * self.aco_tracionado() / (pi * bitola_t ** 2)
+            barrasC = 400 * self.aco_comprimido() / (pi * bitola_c ** 2)
+            if round(barrasT) > barrasT:
+                nbarT = round(barrasT, 0)
+            else:
+                nbarT = round(barrasT + 1, 0)
+            if round(barrasC) > barrasC:
+                nbarC = round(barrasC, 0)
+            else:
+                nbarC = round(barrasC + 1, 0)
+            return [nbarT, nbarC]
 
-    def camadas_armadura(self, bitola, diametro_brita, diametro_estribo):
-        nbar = self.barras_aco(bitola)
-        nbar_1cam = nbar
-        e_hor = (self.base - 2 * (self.cobrimento + diametro_estribo/10) - nbar_1cam * bitola/10) / (nbar_1cam - 1)
-        while e_hor <= diametro_brita:
-            nbar_1cam -= 1
-            e_hor = (self.base - 2 * (self.cobrimento + diametro_estribo/10) - nbar_1cam * bitola / 10) / (nbar_1cam - 1)
-        if round(nbar / nbar_1cam) < nbar / nbar_1cam:
-            ncam = round(nbar / nbar_1cam) + 1
+    def camadas_armadura(self, bitola_t, bitola_c, diametro_brita, diametro_estribo):
+        if self.mi() < 0.3:
+            nbar = self.barras_aco(bitola_t)
+            nbar_1cam = nbar
+            e_hor = (self.base - 2 * (self.cobrimento + diametro_estribo/10) - nbar_1cam * bitola_t / 10) / (nbar_1cam - 1)
+            while e_hor <= diametro_brita:
+                nbar_1cam -= 1
+                e_hor = (self.base - 2 * (self.cobrimento + diametro_estribo/10) - nbar_1cam * bitola_t / 10) / (nbar_1cam - 1)
+            if round(nbar / nbar_1cam) < nbar / nbar_1cam:
+                ncam = round(nbar / nbar_1cam) + 1
+            else:
+                ncam = round(nbar / nbar_1cam)
+            return [nbar_1cam, e_hor, ncam]
         else:
-            ncam = round(nbar / nbar_1cam)
+            nbarT = self.barras_aco(bitola_t)[0]
+            nbarC = self.barras_aco(bitola_c)[1]
+            nbarT_1cam = nbarT
+            nbarC_1cam = nbarC
+            e_horT = (self.base - 2 * (self.cobrimento + diametro_estribo / 10) - nbarT_1cam * bitola_t / 10) / (
+                        nbarT_1cam - 1)
+            while e_horT <= diametro_brita:
+                nbarT_1cam -= 1
+                e_horT = (self.base - 2 * (self.cobrimento + diametro_estribo / 10) - nbarT_1cam * bitola_t / 10) / (
+                            nbarT_1cam - 1)
+            if round(nbarT / nbarT_1cam) < nbarT / nbarT_1cam:
+                ncamT = round(nbarT / nbarT_1cam) + 1
+            else:
+                ncamT = round(nbarT / nbarT_1cam)
 
-        return [nbar_1cam, e_hor, ncam]
+            e_horC = (self.base - 2 * (self.cobrimento + diametro_estribo / 10) - nbarC_1cam * bitola_t / 10) / (
+                        nbarC_1cam - 1)
+            while e_horC <= diametro_brita:
+                nbarC_1cam -= 1
+                e_horC = (self.base - 2 * (self.cobrimento + diametro_estribo / 10) - nbarC_1cam * bitola_t / 10) / (
+                            nbarC_1cam - 1)
+            if round(nbarC / nbarC_1cam) < nbarC / nbarC_1cam:
+                ncamC = round(nbarC / nbarC_1cam) + 1
+            else:
+                ncamC = round(nbarC / nbarC_1cam)
+            return [[nbarT_1cam, e_horT, ncamT], [nbarC_1cam, e_horC, ncamC]]
 
-    # def calcular_centroide(self, bitola, diametro_brita, diametro_estribo):
-    #     camadas = self.camadas_armadura(bitola, diametro_brita, diametro_estribo)[2]
-    #     centroide = 0
-    #     if camadas == 1:
-    #         centroide = self.cobrimento + diametro_estribo/10 + bitola/20
-    #     elif camadas == 2:
-    #         n1 = self.camadas_armadura(20, 3, 5)[0] * (self.cobrimento + diametro_estribo/10 + bitola/10 + 2 +
-    #                                                    bitola/20) * bitola/10
-    #         n2 = (self.barras_aco(20) - self.camadas_armadura(20, 3, 5)[0]) * (n1 + bitola/20 + 2 + bitola/20) * \
-    #              bitola/10
-    #
-    #         d = self.barras_aco(20) * bitola/10
-    #         print(n1, n2, d)
-    #         centroide = (n1 + n2) / d
-    #     return centroide
+    def calcular_centroide(self, bitola_t, bitola_c, diametro_brita, diametro_estribo):
+        if self.mi() < 0.3:
+            camadas = self.camadas_armadura(bitola_t, bitola_c, diametro_brita, diametro_estribo)[2]
+        else:
+            camadas = self.camadas_armadura(bitola_t, bitola_c, diametro_brita, diametro_estribo)[0][2]
 
-class Laje_macica_flexao():
+        if camadas == 1:
+            self.centroide = self.cobrimento + diametro_estribo / 10 + bitola_t / 20
+        elif camadas == 2:
+            n1 = (self.cobrimento + diametro_estribo / 10 + bitola_t / 20)
+            n2 = (n1 + bitola_t / 20 + 2 + bitola_t / 20)
+            d = self.barras_aco(bitola_t)
+        else:
+            self.centroide = 10
+            print('\nCálculo de centroide em desenvolvimento. Valor genérico.')
+
+            # FIXME: IDENTIFICAR ERRO - CÁLCULO DE CENTRÓIDE INCONSISTENTE 3+ CAMADAS
+            # if self.mi() < 0.3:
+            #     nbar_1cam = self.camadas_armadura(bitola_t, bitola_c, diametro_brita, diametro_estribo)[0][0]
+            #     yCamada = [self.cobrimento + diametro_estribo + bitola_t/20]
+            #     for x in range(0, camadas-1):
+            #         yCamada.append(bitola_t/20 + 2 + bitola_t/20)
+            #
+            #     centroide = yCamada[0]*nbar_1cam
+            #
+            #
+            #     self.centroide = round((self.camadas_armadura(bitola_t, bitola_c, diametro_brita, diametro_estribo)[0] * n1
+            #     + (self.barras_aco(bitola_t) - self.camadas_armadura(bitola_t, bitola_c, diametro_brita,
+            #                                                        diametro_estribo)[0]) * n2) / d, 2)
+            # else:
+            #     d = self.barras_aco(bitola_t)[0]
+            #     self.centroide = round(self.camadas_armadura(bitola_t, bitola_c, diametro_brita, diametro_estribo)[0][
+            #                          0] * n1 + (self.barras_aco(bitola_t)[0] -
+            #                 self.camadas_armadura(bitola_t, bitola_c, diametro_brita, diametro_estribo)[0][0] * n2 /
+            #                                     d), 2)
+
+        self.calcular_altura_util()
+        return self.centroide
+
+    def verificar(self, bitola):
+        if self.mi() < 0.3:
+            area_aco_real = self.barras_aco(bitola) * pi * (bitola) ** 2 / 400
+        else:
+            area_aco_real = self.barras_aco(bitola)[0] * pi * (bitola) ** 2 / 400
+        print(f'{area_aco_real}cm2')
+        ks = self.ks()
+        print(f'{ks}cm2')
+        omega = area_aco_real / ks
+        print(f'{omega}')
+        mi = omega - (omega ** 2) / 2
+        print(f'{mi}')
+        mk_max = round((mi * self.sigmacd() * self.base * self.altura_util ** 2 / 1.4) / 100, 2)
+        return mk_max
+
+    def delta_mi(self):
+        return round(self.mi() - 0.3, 2)
+
+    def delta_d(self):
+        return round(self.centroide / self.altura_util, 2)
+
+    def aco_comprimido(self):
+        return round((self.ks() * self.delta_mi()) / (1 - self.delta_d()), 2)
+
+    def aco_tracionado(self):
+        return round(self.aco_comprimido() + 0.36 * self.ks(), 2)
+
+
+class LajeMacicaFlexao():
     def __init__(self):
         self.espessura = 0
         self.base = 100
@@ -140,7 +238,7 @@ class Laje_macica_flexao():
         return [ex, ey, exe, eye]
 
 
-class Sapata_isolada_flexao():
+class SapataIsoladaFlexao():
     def __init__(self):
         self.tensao_solo = 0
         self.carga_compressao = 0
@@ -246,14 +344,3 @@ class Sapata_isolada_flexao():
         else:
             nbary = round(ny, 0)
         return [nbarx, nbary]
-
-viga = Viga_flexao()
-viga.base = 18
-viga.altura = 65
-viga.mk = 14
-viga.fck = 30
-viga.aco = 50
-#cobrimento 3, estribo 5
-print(viga.barras_aco(20))
-print(viga.camadas_armadura(20, 3, 5))
-print(viga.calcular_centroide(20, 3, 5))
